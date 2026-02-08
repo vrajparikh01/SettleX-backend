@@ -10,4 +10,3 @@ module.exports.PreMarketTradeController = require('./premarket/premarket_trade.c
 module.exports.PreMarketActivityController = require('./premarket/premarket_activity.controller');
 module.exports.chainController = require('./chain.controller');
 module.exports.brokersLinkController = require('./otc/brokerlinks.controller');
-module.exports.equityController = require('./equity/equity.controller');

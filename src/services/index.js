@@ -11,4 +11,3 @@ module.exports.preMarketTradeService = require('./premarket/premarket_trade.serv
 module.exports.preMarketActivityService = require('./premarket/premarket_activity.service');
 module.exports.chainService = require('./chain.service');
 module.exports.brokersLinkService = require('./otc/brokerlinks.service');
-module.exports.equityService = require('./equity/equity.services');

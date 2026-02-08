@@ -10,4 +10,3 @@ module.exports.PreMarketTrade = require('./premarket/premarket_trade.model');
 module.exports.PreMarketActivity = require('./premarket/premarket_activity.model');
 module.exports.ChainList = require('./chain.model');
 module.exports.BrokerLinks = require('./otc/broker_link.model');
-module.exports.Equity = require('./equity/equity.model');

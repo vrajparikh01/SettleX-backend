@@ -6,4 +6,3 @@ module.exports.offerValidation = require('./offer.validation');
 module.exports.activityValidation = require('./activity.validation');
 module.exports.chainValidation = require('./chain.validation');
 module.exports.brokersLinkValidation = require('./brokerlink.validation');
-module.exports.equityValidation = require('./equity.validation');

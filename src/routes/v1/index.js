@@ -11,7 +11,6 @@ const brokerLinksRoute = require('./otc/brokerlink.route');
 const preMarketTradeRoute = require('./premarket/premarket_trade.route');
 const preMarketActivityRoute = require('./premarket/premarket_activity.route');
 const preMarketTokensRoute = require('./premarket/premarkettoken.route');
-const equityRoute = require('./equity/equity.route');
 const commanRoute = require('./comman.route');
 const config = require('../../config/config');
 
@@ -65,10 +64,6 @@ const defaultRoutes = [
   {
     path: '/brokerlinks',
     route: brokerLinksRoute,
-  },
-  {
-    path: '/equity',
-    route: equityRoute,
   },
   {
     path: '/common',
