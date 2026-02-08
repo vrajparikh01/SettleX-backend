@@ -9,24 +9,41 @@ let server;
 
 mongoose.connect(config.mongoose.url, config.mongoose.options).then(() => {
   logger.info('Connected to MongoDB : ' + config.mongoose.url);
-  if (config.env === "production" || config.env === "development") {
-    console.log(config.env);
+  // if (config.env === "production" || config.env === "development") {
+  //   console.log(config.env);
+  //   const sslOptions = {
+  //     key: fs.readFileSync(config.ssl.privKey),
+  //     cert: fs.readFileSync(config.ssl.fullChainKey)
+  //   };
+  //   server = https.createServer(sslOptions, app).listen(config.port, () => {
+  //     logger.info(`Listening to port ${config.port} (HTTPS)`);
+  //     logger.info(`Server URL: ${config.url}/api/v1`);
+  //   });
+
+  // } else {
+  //   server = app.listen(config.port, () => {
+  //     logger.info(`Listening to port ${config.port}`);
+  //     logger.info(`Server URL: ${config.url}/api/v1`);
+  //   });
+  // }
+  if (config.env === "local") {
     const sslOptions = {
       key: fs.readFileSync(config.ssl.privKey),
-      cert: fs.readFileSync(config.ssl.fullChainKey)
+      cert: fs.readFileSync(config.ssl.fullChainKey),
     };
+
     server = https.createServer(sslOptions, app).listen(config.port, () => {
-      logger.info(`Listening to port ${config.port} (HTTPS)`);
-      logger.info(`Server URL: ${config.url}/api/v1`);
+      logger.info(`Listening to port ${config.port} (HTTPS local)`);
+      logger.info(`Server URL: https://localhost:${config.port}/api/v1`);
     });
 
   } else {
+    // ✅ Production + Render + Cloud = HTTP only
     server = app.listen(config.port, () => {
-      logger.info(`Listening to port ${config.port}`);
+      logger.info(`Listening to port ${config.port} (HTTP)`);
       logger.info(`Server URL: ${config.url}/api/v1`);
     });
   }
-
 });
 
 const exitHandler = () => {
