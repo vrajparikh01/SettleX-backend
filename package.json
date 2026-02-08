@@ -1,7 +1,7 @@
 {
-  "name": "openmarket-otc-backend",
+  "name": "settlex-otc-backend",
   "version": "1.0.0",
-  "description": "openmarket",
+  "description": "settlex",
   "main": "src/index.js",
   "repository": "",
   "license": "MIT",

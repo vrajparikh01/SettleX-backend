@@ -1,6 +1,4 @@
-# Open Market Backend API
-
-An apis for open market project
+# SettleX Backend API
 
 run `npm install` command for installing packages
 
